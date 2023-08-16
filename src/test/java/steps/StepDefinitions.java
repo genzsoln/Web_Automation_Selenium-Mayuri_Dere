@@ -29,6 +29,8 @@ public class StepDefinitions {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/src/driver/chromedriver_win32/chromedriver.exe");
 
     }
+
+
     @After
     public void after(Scenario s) {
         driver.close();
@@ -38,6 +40,7 @@ public class StepDefinitions {
 
     @Given("User launches lufthansa web application")
     public void user_launches_lufthansa_web_application() throws InterruptedException {
+        // launch web application
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
